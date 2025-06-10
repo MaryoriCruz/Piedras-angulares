@@ -1,0 +1,169 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #070707;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+nav {
+    background: #6a040f;
+    padding: 1rem;
+    text-align: center;
+    color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding-top: 2rem;
+    padding-bottom: 2.5rem;
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 0;
+    text-align: left;
+}
+h2 {
+    text-align: center;
+    padding: 1rem;
+    color: #eee7e7;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    flex: 1;
+    align-items: center;
+}
+
+.card {
+    width: 300px;
+    height: 420px;
+    perspective: 1000px;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 1.2s ease;
+    transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card-front {
+    background-size:cover;
+    background-position:center;
+    align-items: center;
+    background-repeat: no-repeat;
+}
+.pic-molecular {
+    background-image: url(./file/biologamolecular.jpg);
+}
+
+.pic-amazonica {
+    background-image: url('./file/biologaamazonica.jpg') 
+}
+
+.pic-nanosensores {
+    background-image: url(./file/quimicananosensores.jpg);
+}
+
+.pic-ia {
+    background-image: url(./file/inteligenciaartificial.jpg);
+}
+
+.card-text-front {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 2%;
+    text-align: center;
+    
+}
+
+.card-text-front h2 {
+    font-size: 150%;
+    color:rgb(247, 249, 250);
+    margin: 3%;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.card-back {
+    background: #1e1e1e;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1rem;
+}
+
+.card-back img.photo-small {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10%;
+    border: 3px solid rgb(255, 253, 253);
+    margin-bottom: 0.8rem;
+}
+
+.card-text-back h2 {
+    font-size: 1.5rem;
+    color: whitesmoke;
+    text-align: center;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.card-text-back p {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-top: 0;
+    padding-top: 0;
+    max-width: 400px;
+    text-align: center;
+    color: #f9f5f5;
+}
+
+footer {
+    background: #6a040f;
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+    padding-bottom: 1.5rem;
+    padding-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+}
